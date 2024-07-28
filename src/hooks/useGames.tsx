@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
 import apiClient from "../services/api-client";
 
-interface GamesProps {
+export interface GamesProps {
   id: number;
   name: string;
+  background_image: string;
 }
 
 interface FetchGamesResponse {
@@ -16,10 +17,13 @@ export const UseGames = () => {
   const [error, setError] = useState("");
 
   useEffect(() => {
+    // const controller = AbortController();
     apiClient
-      .get<FetchGamesResponse>("/games")
+      .get<FetchGamesResponse>("/games") // , { signal: controller.signal
       .then((res) => setGames(res.data.results))
       .catch((error) => setError(error.message));
-  });
+
+    // return () => controller.abort();
+  }, []);
   return { games, error };
 };
