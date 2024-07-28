@@ -1,4 +1,5 @@
 import { GamesProps } from "../hooks/useGames";
+import PlatformIconList from "./platform-icon-list";
 
 interface Props {
   results: GamesProps;
@@ -17,6 +18,11 @@ const GameCard = ({ results }: Props) => {
           <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
             {results.name}
           </h2>
+          <PlatformIconList
+            platforms={results.parent_platforms.map(
+              (platform) => platform.platform
+            )}
+          />
         </div>
       </div>
     </>
