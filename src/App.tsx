@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "./component/navbar";
 import GameGrid from "./component/game-grid";
+import GenreList from "./component/GenreList";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -24,7 +25,9 @@ const App = () => {
       <div className="w-full min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex">
-          <div className="w-1/4 border border-red p-4">Side</div>
+          <div className="w-1/4 border border-red p-4">
+            <GenreList />
+          </div>
           <div className="w-3/4 p-4 border border-green-600">
             <GameGrid />
           </div>
