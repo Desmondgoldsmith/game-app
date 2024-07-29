@@ -3,7 +3,7 @@ import GameCard from "./game-card";
 import GameCardSkeleton from "./game-card-skeleton";
 
 const GameGrid = () => {
-  const { games, error, isLoading } = UseGames();
+  const { data, error, isLoading } = UseGames();
   const chunks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
@@ -13,7 +13,7 @@ const GameGrid = () => {
         {isLoading === true
           ? chunks.map((chunk) => <GameCardSkeleton key={chunk} />)
           : ""}
-        {games.map((game) => (
+        {data.map((game) => (
           <GameCard key={game.id} results={game} />
         ))}
       </div>
