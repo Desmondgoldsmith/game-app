@@ -29,7 +29,7 @@ const PlatformIconList = ({ platforms }: IconProps) => {
     nintendo: SiNintendo,
   };
   return (
-    <div className="flex flex-row gap-3">
+    <div className="flex flex-row gap-3 text-zinc-400">
       {platforms.map((platform) => {
         const IconComponent = IconMap[platform.slug];
         return IconComponent ? (

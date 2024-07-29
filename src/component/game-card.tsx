@@ -1,4 +1,5 @@
 import { GamesProps } from "../hooks/useGames";
+import GetSizedImages from "../services/image-url";
 import CriticScore from "./critic-score";
 import PlatformIconList from "./platform-icon-list";
 
@@ -11,7 +12,7 @@ const GameCard = ({ results }: Props) => {
     <>
       <div className="bg-white dark:bg-gray-800 cursor-pointer rounded-lg shadow-md overflow-hidden">
         <img
-          src={results.background_image}
+          src={GetSizedImages(results.background_image)}
           alt={results.name}
           className="w-full h-48 object-cover"
         />

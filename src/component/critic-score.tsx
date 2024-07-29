@@ -8,7 +8,7 @@ const CriticScore = ({ score }: Props) => {
       : score > 80
       ? `bg-yellow-400 font-bold`
       : score > 60
-      ? `bg-blue-400 text-zinc-400 font-bold`
+      ? `bg-blue-400 font-bold`
       : `bg-zinc-600 font-bold`;
 
   return (
