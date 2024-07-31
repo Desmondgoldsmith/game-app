@@ -4,10 +4,16 @@ import GameGrid from "./component/game-grid";
 import GenreList from "./component/GenreList";
 import { GenreProps } from "./hooks/useGenre";
 import PlatformSelector from "./component/PlatformSelector";
+import { Platform } from "./hooks/useGames";
+
+export interface GameQuery {
+  genre: GenreProps | null;
+  platform: Platform | null;
+}
 
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [selectedGenre, setSelectedGenre] = useState<GenreProps | null>(null);
+  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -30,13 +36,20 @@ const App = () => {
         <div className="flex">
           <div className="w-1/4 border border-red p-4">
             <GenreList
-              selectedGenre={selectedGenre}
-              getSelectedGenre={(genre) => setSelectedGenre(genre)}
+              selectedGenre={gameQuery.genre}
+              getSelectedGenre={(genre) =>
+                setGameQuery({ ...gameQuery, genre })
+              }
             />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
-            <PlatformSelector />
-            <GameGrid selectedGenre={selectedGenre} />
+            <PlatformSelector
+              platform={gameQuery.platform}
+              selectedPlatform={(platform) =>
+                setGameQuery({ ...gameQuery, platform })
+              }
+            />
+            <GameGrid gameQuery={gameQuery} />
           </div>
         </div>
       </div>
