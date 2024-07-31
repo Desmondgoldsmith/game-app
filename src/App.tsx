@@ -3,6 +3,7 @@ import Navbar from "./component/navbar";
 import GameGrid from "./component/game-grid";
 import GenreList from "./component/GenreList";
 import { GenreProps } from "./hooks/useGenre";
+import PlatformSelector from "./component/PlatformSelector";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
@@ -34,6 +35,7 @@ const App = () => {
             />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
+            <PlatformSelector />
             <GameGrid selectedGenre={selectedGenre} />
           </div>
         </div>
