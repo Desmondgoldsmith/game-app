@@ -1,6 +1,10 @@
-import { UseGenre } from "../hooks/useGenre";
+import { GenreProps, UseGenre } from "../hooks/useGenre";
 
-const GenreList = () => {
+interface Props {
+  getSelectedGenre: (genre: GenreProps) => void;
+}
+
+const GenreList = ({ getSelectedGenre }: Props) => {
   const { data } = UseGenre();
   return (
     <>
@@ -11,7 +15,10 @@ const GenreList = () => {
               src={data.image_background}
               className="w-[45px] h-[45px] rounded-lg object-cover border "
             />
-            <p className="hover: cursor-pointer hover: underline">
+            <p
+              className="hover: cursor-pointer hover: underline"
+              onClick={() => getSelectedGenre(data)}
+            >
               {data.name}
             </p>
           </div>

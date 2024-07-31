@@ -2,9 +2,11 @@ import { useEffect, useState } from "react";
 import Navbar from "./component/navbar";
 import GameGrid from "./component/game-grid";
 import GenreList from "./component/GenreList";
+import { GenreProps } from "./hooks/useGenre";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
+  const [selectedGenre, setSelectedGenre] = useState<GenreProps | null>(null);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -26,7 +28,7 @@ const App = () => {
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex">
           <div className="w-1/4 border border-red p-4">
-            <GenreList />
+            <GenreList getSelectedGenre={(genre) => setSelectedGenre(genre)} />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
             <GameGrid />
