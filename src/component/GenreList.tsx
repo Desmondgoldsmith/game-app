@@ -16,7 +16,7 @@ const GenreList = ({ getSelectedGenre }: Props) => {
               className="w-[45px] h-[45px] rounded-lg object-cover border "
             />
             <p
-              className="hover: cursor-pointer hover: underline"
+              className="hover:cursor-pointer hover:underline"
               onClick={() => getSelectedGenre(data)}
             >
               {data.name}

@@ -31,7 +31,7 @@ const App = () => {
             <GenreList getSelectedGenre={(genre) => setSelectedGenre(genre)} />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
-            <GameGrid />
+            <GameGrid selectedGenre={selectedGenre} />
           </div>
         </div>
       </div>
