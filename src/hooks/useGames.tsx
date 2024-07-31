@@ -1,4 +1,5 @@
 import UseData from "./useData";
+import { GenreProps } from "./useGenre";
 
 export interface Platform {
   id: number;
@@ -18,4 +19,7 @@ export interface FetchGamesResponse {
   results: GamesProps[];
 }
 
-export const UseGames = () => UseData<GamesProps>("/games");
+export const UseGames = (selectedGenre: GenreProps | null) =>
+  UseData<GamesProps>("/games", { params: { genres: selectedGenre?.id } }, [
+    selectedGenre?.id,
+  ]);
