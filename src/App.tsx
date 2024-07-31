@@ -4,10 +4,14 @@ import GameGrid from "./component/game-grid";
 import GenreList from "./component/GenreList";
 import { GenreProps } from "./hooks/useGenre";
 import PlatformSelector from "./component/PlatformSelector";
+import { Platform } from "./hooks/useGames";
 
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
   const [selectedGenre, setSelectedGenre] = useState<GenreProps | null>(null);
+  const [selectedPlatform, setSelectedPlatform] = useState<Platform | null>(
+    null
+  );
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -35,8 +39,14 @@ const App = () => {
             />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
-            <PlatformSelector />
-            <GameGrid selectedGenre={selectedGenre} />
+            <PlatformSelector
+              platform={selectedPlatform}
+              selectedPlatform={(platform) => setSelectedPlatform(platform)}
+            />
+            <GameGrid
+              selectedPlatform={selectedPlatform}
+              selectedGenre={selectedGenre}
+            />
           </div>
         </div>
       </div>

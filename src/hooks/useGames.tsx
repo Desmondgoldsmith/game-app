@@ -19,7 +19,12 @@ export interface FetchGamesResponse {
   results: GamesProps[];
 }
 
-export const UseGames = (selectedGenre: GenreProps | null) =>
-  UseData<GamesProps>("/games", { params: { genres: selectedGenre?.id } }, [
-    selectedGenre?.id,
-  ]);
+export const UseGames = (
+  selectedGenre: GenreProps | null,
+  selectedPlatform: Platform | null
+) =>
+  UseData<GamesProps>(
+    "/games",
+    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
+    [selectedGenre?.id, selectedPlatform?.id]
+  );
