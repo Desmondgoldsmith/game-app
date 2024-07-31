@@ -28,7 +28,10 @@ const App = () => {
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex">
           <div className="w-1/4 border border-red p-4">
-            <GenreList getSelectedGenre={(genre) => setSelectedGenre(genre)} />
+            <GenreList
+              selectedGenre={selectedGenre}
+              getSelectedGenre={(genre) => setSelectedGenre(genre)}
+            />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
             <GameGrid selectedGenre={selectedGenre} />
