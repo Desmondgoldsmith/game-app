@@ -19,6 +19,7 @@ export interface FetchGamesResponse {
   results: GamesProps[];
 }
 
+<<<<<<< HEAD
 export const UseGames = (gameQuery: GameQuery | null) =>
   UseData<GamesProps>(
     "/games",
@@ -30,4 +31,14 @@ export const UseGames = (gameQuery: GameQuery | null) =>
       },
     },
     [gameQuery]
+=======
+export const UseGames = (
+  selectedGenre: GenreProps | null,
+  selectedPlatform: Platform | null
+) =>
+  UseData<GamesProps>(
+    "/games",
+    { params: { genres: selectedGenre?.id, platforms: selectedPlatform?.id } },
+    [selectedGenre?.id, selectedPlatform?.id]
+>>>>>>> eb89316ca5336b61dd5737058e96e60fcf7db690
   );
