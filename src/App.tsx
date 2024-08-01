@@ -59,14 +59,6 @@ const App = () => {
                 }
               />
             </div>
-
-            <GameGrid gameQuery={gameQuery} />
-            <PlatformSelector
-              platform={gameQuery.platform}
-              selectedPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
-              }
-            />
             <GameGrid gameQuery={gameQuery} />
           </div>
         </div>
