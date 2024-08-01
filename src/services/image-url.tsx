@@ -1,4 +1,5 @@
 const GetSizedImages = (url: string) => {
+  if (!url) return "";
   const target = "media/";
   //we are getting the index of '/media' in the url
   const index = url.indexOf(target) + target.length;
