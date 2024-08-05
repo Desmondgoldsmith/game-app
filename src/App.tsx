@@ -6,6 +6,7 @@ import { GenreProps } from "./hooks/useGenre";
 import PlatformSelector from "./component/PlatformSelector";
 import { Platform } from "./hooks/useGames";
 import SortSelector from "./component/Sort-Selector";
+import GameHeading from "./component/GameHeading";
 
 export interface GameQuery {
   genre: GenreProps | null;
@@ -52,6 +53,9 @@ const App = () => {
             />
           </div>
           <div className="w-3/4 p-4 border border-green-600">
+            <div className="space-x-5 pl-3 mb-4">
+              <GameHeading gameQuery={gameQuery} />
+            </div>
             <div className="flex space-x-5 pl-3">
               <PlatformSelector
                 platform={gameQuery.platform}
