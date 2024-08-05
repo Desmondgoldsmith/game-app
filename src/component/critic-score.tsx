@@ -14,9 +14,9 @@ const CriticScore = ({ score }: Props) => {
   return (
     <>
       <div
-        className={`p-1 w-8 h-8 text-center  items-center  rounded-md ${colorDet}`}
+        className={`p-1 w-10 h-9 text-center  items-center  rounded-md ${colorDet}`}
       >
-        {score}
+        {score === null ? "N/A" : score}
       </div>
     </>
   );

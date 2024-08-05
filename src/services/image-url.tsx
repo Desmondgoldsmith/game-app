@@ -1,5 +1,6 @@
+import reactImage from "../assets/react.svg";
 const GetSizedImages = (url: string) => {
-  if (!url) return "";
+  if (!url) return reactImage;
   const target = "media/";
   //we are getting the index of '/media' in the url
   const index = url.indexOf(target) + target.length;

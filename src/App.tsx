@@ -11,6 +11,7 @@ export interface GameQuery {
   genre: GenreProps | null;
   platform: Platform | null;
   sortOrder: string;
+  searchValue: string;
 }
 
 const App = () => {
@@ -34,7 +35,13 @@ const App = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
+        <Navbar
+          onSearch={(searchValue) =>
+            setGameQuery({ ...gameQuery, searchValue })
+          }
+          darkMode={darkMode}
+          toggleDarkMode={toggleDarkMode}
+        />
         <div className="flex">
           <div className="w-1/4 border border-red p-4">
             <GenreList

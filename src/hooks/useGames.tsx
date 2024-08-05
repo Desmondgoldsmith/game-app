@@ -27,6 +27,7 @@ export const UseGames = (gameQuery: GameQuery | null) =>
         genres: gameQuery?.genre?.id,
         platforms: gameQuery?.platform?.id,
         ordering: gameQuery?.sortOrder,
+        search: gameQuery?.searchValue,
       },
     },
     [gameQuery]
