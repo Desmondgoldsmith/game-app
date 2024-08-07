@@ -10,7 +10,7 @@ const GenreList = ({ selectedGenre, getSelectedGenre }: Props) => {
   return (
     <>
       <h1 className="font-mono mb-4 font-bold text-[25px] p-2">Genres</h1>
-      {data.map((data) => (
+      {data?.results.map((data) => (
         <div key={data.id} className="space-y-5">
           <div className="flex space-x-3 p-2  items-center">
             <img

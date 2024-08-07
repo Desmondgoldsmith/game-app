@@ -1,4 +1,6 @@
-import UseData from "./useData";
+import { useQuery } from "@tanstack/react-query";
+import apiClient from "../services/api-client";
+import { FetchResponseData } from "./useData";
 
 export interface GenreProps {
   id: number;
@@ -6,4 +8,12 @@ export interface GenreProps {
   image_background: string;
 }
 
-export const UseGenre = () => UseData<GenreProps>("/genres");
+export const UseGenre = () =>
+  useQuery({
+    queryKey: ["Genres"],
+    queryFn: () =>
+      apiClient
+        .get<FetchResponseData<GenreProps>>("/genres")
+        .then((res) => res.data),
+    staleTime: 24 * 60 * 60 * 1000,
+  });
