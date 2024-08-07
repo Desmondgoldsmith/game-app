@@ -31,7 +31,7 @@ const PlatformSelector = ({ selectedPlatform, platform }: PlatformProps) => {
       {isOpen && (
         <div className="absolute z-10 w-48 mt-2 dark:bg-gray-700 bg-white rounded-md shadow-lg">
           <ul className="py-1">
-            {platforms.map((platformx) => (
+            {platforms?.results.map((platformx) => (
               <li
                 key={platformx.id}
                 className={`px-4 py-2 text-sm text-gray-700 dark:text-white dark:hover:bg-gray-600 hover:bg-gray-100 cursor-pointer`}
