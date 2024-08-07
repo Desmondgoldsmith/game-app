@@ -1,7 +1,6 @@
 import { useState } from "react";
-import { usePlatforms } from "../hooks/usePlatforms";
+import { Platform, usePlatforms } from "../hooks/usePlatforms";
 import { BsChevronDown } from "react-icons/bs";
-import { Platform } from "../hooks/useGames";
 
 interface PlatformProps {
   selectedPlatform: (platform: Platform) => void;
