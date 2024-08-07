@@ -11,12 +11,12 @@ const GameGrid = ({ gameQuery }: Props) => {
   const chunks = [1, 2, 3, 4, 5, 6, 7, 8, 9];
   return (
     <>
-      {error && <p>error: {error}</p>}
+      {error && <p>error: {error.message}</p>}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
         {isLoading === true
           ? chunks.map((chunk) => <GameCardSkeleton key={chunk} />)
           : ""}
-        {data.map((game) => (
+        {data?.results.map((game) => (
           <GameCard key={game.id} results={game} />
         ))}
       </div>
