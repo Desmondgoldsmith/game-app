@@ -1,6 +1,6 @@
 import { GameQuery } from "../App";
 import { UseGenre } from "../hooks/useGenre";
-import { usePlatforms } from "../hooks/usePlatforms";
+import usePlatform from "../hooks/usePlatform";
 
 interface Props {
   gameQuery: GameQuery;
@@ -8,10 +8,8 @@ interface Props {
 
 const GameHeading = ({ gameQuery }: Props) => {
   const { data: genres } = UseGenre();
-  const { data: platforms } = usePlatforms();
-  const platform = platforms?.results.find(
-    (platform) => platform.id === gameQuery.platformId
-  );
+  const platform = usePlatform(gameQuery.platformId);
+
   const genre = genres?.results.find((genre) => genre.id === gameQuery.genreId);
   const dynamicHeader = `${platform?.name || ""} ${genre?.name || ""} Games`;
   return (

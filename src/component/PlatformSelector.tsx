@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Platform, usePlatforms } from "../hooks/usePlatforms";
+import usePlatform from "../hooks/usePlatform";
 import { BsChevronDown } from "react-icons/bs";
 
 interface PlatformProps {
@@ -9,9 +10,7 @@ interface PlatformProps {
 
 const PlatformSelector = ({ selectedPlatform, platformId }: PlatformProps) => {
   const { data: platforms, error } = usePlatforms();
-  const platformData = platforms?.results.find(
-    (platform) => platform.id === platformId
-  );
+  const platformData = usePlatform(platformId);
   const [isOpen, setIsOpen] = useState(false);
 
   if (error) return null;
