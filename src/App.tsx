@@ -5,11 +5,10 @@ import GenreList from "./component/GenreList";
 import PlatformSelector from "./component/PlatformSelector";
 import SortSelector from "./component/Sort-Selector";
 import GameHeading from "./component/GameHeading";
-import { Platform } from "./hooks/usePlatforms";
 
 export interface GameQuery {
   genreId?: number;
-  platform: Platform | null;
+  platformId?: number;
   sortOrder: string;
   searchValue: string;
 }
@@ -57,9 +56,9 @@ const App = () => {
             </div>
             <div className="flex space-x-5 pl-3">
               <PlatformSelector
-                platform={gameQuery.platform}
+                platformId={gameQuery.platformId}
                 selectedPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platform })
+                  setGameQuery({ ...gameQuery, platformId: platform.id })
                 }
               />
               <SortSelector

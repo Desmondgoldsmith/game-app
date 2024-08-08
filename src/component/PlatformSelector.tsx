@@ -4,11 +4,14 @@ import { BsChevronDown } from "react-icons/bs";
 
 interface PlatformProps {
   selectedPlatform: (platform: Platform) => void;
-  platform: Platform | null;
+  platformId?: number;
 }
 
-const PlatformSelector = ({ selectedPlatform, platform }: PlatformProps) => {
+const PlatformSelector = ({ selectedPlatform, platformId }: PlatformProps) => {
   const { data: platforms, error } = usePlatforms();
+  const platformData = platforms?.results.find(
+    (platform) => platform.id === platformId
+  );
   const [isOpen, setIsOpen] = useState(false);
 
   if (error) return null;
@@ -20,7 +23,7 @@ const PlatformSelector = ({ selectedPlatform, platform }: PlatformProps) => {
         onClick={() => setIsOpen(!isOpen)}
         className="flex items-center justify-between  w-48 px-4 py-2 text-sm font-medium dark:bg-gray-700 dark:focus:ring-blue-400 dark:text-white dark:border dark:border-gray-700 dark:hover:bg-gray-600 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
-        <span>{platform ? platform.name : "Platforms"}</span>
+        <span>{platformId ? platformData?.name : "Platforms"}</span>
         <BsChevronDown
           className={`ml-2 transition-transform duration-200 ${
             isOpen ? "transform rotate-180" : ""
