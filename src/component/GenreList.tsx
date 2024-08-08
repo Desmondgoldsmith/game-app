@@ -2,10 +2,10 @@ import { GenreProps, UseGenre } from "../hooks/useGenre";
 
 interface Props {
   getSelectedGenre: (genre: GenreProps) => void;
-  selectedGenre: GenreProps | null;
+  selectedGenreId?: number;
 }
 
-const GenreList = ({ selectedGenre, getSelectedGenre }: Props) => {
+const GenreList = ({ selectedGenreId, getSelectedGenre }: Props) => {
   const { data } = UseGenre();
   return (
     <>
@@ -19,7 +19,7 @@ const GenreList = ({ selectedGenre, getSelectedGenre }: Props) => {
             />
             <p
               className={`${
-                data.id === selectedGenre?.id
+                data.id === selectedGenreId
                   ? `font-extrabold text-green-500`
                   : ""
               }

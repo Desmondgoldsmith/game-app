@@ -2,14 +2,13 @@ import { useEffect, useState } from "react";
 import Navbar from "./component/navbar";
 import GameGrid from "./component/game-grid";
 import GenreList from "./component/GenreList";
-import { GenreProps } from "./hooks/useGenre";
 import PlatformSelector from "./component/PlatformSelector";
 import SortSelector from "./component/Sort-Selector";
 import GameHeading from "./component/GameHeading";
 import { Platform } from "./hooks/usePlatforms";
 
 export interface GameQuery {
-  genre: GenreProps | null;
+  genreId?: number;
   platform: Platform | null;
   sortOrder: string;
   searchValue: string;
@@ -46,9 +45,9 @@ const App = () => {
         <div className="flex">
           <div className="w-[15%] border border-red p-4">
             <GenreList
-              selectedGenre={gameQuery.genre}
+              selectedGenreId={gameQuery.genreId}
               getSelectedGenre={(genre) =>
-                setGameQuery({ ...gameQuery, genre })
+                setGameQuery({ ...gameQuery, genreId: genre.id })
               }
             />
           </div>
