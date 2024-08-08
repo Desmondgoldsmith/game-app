@@ -10,6 +10,7 @@ interface PlatformProps {
 
 const PlatformSelector = ({ selectedPlatform, platformId }: PlatformProps) => {
   const { data: platforms, error } = usePlatforms();
+  // usePlatform is a function that accepts the platformId and returns the data that matches the given platformId
   const platformData = usePlatform(platformId);
   const [isOpen, setIsOpen] = useState(false);
 
