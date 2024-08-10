@@ -42,7 +42,7 @@ const App = () => {
           toggleDarkMode={toggleDarkMode}
         />
         <div className="flex">
-          <div className="w-[15%] border border-red p-4">
+          <div className="w-[15%] p-4">
             <GenreList
               selectedGenreId={gameQuery.genreId}
               getSelectedGenre={(genre) =>
@@ -50,7 +50,7 @@ const App = () => {
               }
             />
           </div>
-          <div className="w-[85%] p-4 border border-green-600">
+          <div className="w-[85%] p-4">
             <div className="space-x-5 pl-3 mb-4">
               <GameHeading gameQuery={gameQuery} />
             </div>
