@@ -37,12 +37,7 @@ const App = () => {
             </div>
             <div className="flex space-x-5 pl-3">
               <PlatformSelector />
-              <SortSelector
-                sort={gameQuery.sortOrder}
-                onSelectSortOrder={(sortOrder) =>
-                  setGameQuery({ ...gameQuery, sortOrder })
-                }
-              />
+              <SortSelector />
             </div>
             <GameGrid gameQuery={gameQuery} />
           </div>

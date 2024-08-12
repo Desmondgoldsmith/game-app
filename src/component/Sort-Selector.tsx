@@ -1,13 +1,12 @@
 import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
+import GameQueryStore from "../store";
 
-interface Props {
-  onSelectSortOrder: (sortOrder: string) => void;
-  sort: string;
-}
-
-const SortSelector = ({ onSelectSortOrder, sort }: Props) => {
+const SortSelector = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const sort = GameQueryStore((s) => s.gameQuery.sortOrder);
+  const onSelectSortOrder = GameQueryStore((s) => s.setSortOrder);
+
   const sortOrders = [
     { value: "", label: "Relevance" },
     { value: "-added", label: "Date Added" },
