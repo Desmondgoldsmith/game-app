@@ -33,15 +33,10 @@ const App = () => {
           </div>
           <div className="w-[85%] p-4">
             <div className="space-x-5 pl-3 mb-4">
-              <GameHeading gameQuery={gameQuery} />
+              <GameHeading />
             </div>
             <div className="flex space-x-5 pl-3">
-              <PlatformSelector
-                platformId={gameQuery.platformId}
-                selectedPlatform={(platform) =>
-                  setGameQuery({ ...gameQuery, platformId: platform.id })
-                }
-              />
+              <PlatformSelector />
               <SortSelector
                 sort={gameQuery.sortOrder}
                 onSelectSortOrder={(sortOrder) =>

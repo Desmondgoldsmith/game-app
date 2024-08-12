@@ -1,17 +1,15 @@
 import { useState } from "react";
-import { Platform, usePlatforms } from "../hooks/usePlatforms";
-import usePlatform from "../hooks/usePlatform";
 import { BsChevronDown } from "react-icons/bs";
+import usePlatform from "../hooks/usePlatform";
+import { usePlatforms } from "../hooks/usePlatforms";
+import GameQueryStore from "../store";
 
-interface PlatformProps {
-  selectedPlatform: (platform: Platform) => void;
-  platformId?: number;
-}
-
-const PlatformSelector = ({ selectedPlatform, platformId }: PlatformProps) => {
+const PlatformSelector = () => {
   const { data: platforms, error } = usePlatforms();
   // usePlatform is a function that accepts the platformId and returns the data that matches the given platformId
+  const platformId = GameQueryStore((s) => s.gameQuery.platformId);
   const platformData = usePlatform(platformId);
+  const selectedPlatform = GameQueryStore((s) => s.setPlatformId);
   const [isOpen, setIsOpen] = useState(false);
 
   if (error) return null;
@@ -37,7 +35,7 @@ const PlatformSelector = ({ selectedPlatform, platformId }: PlatformProps) => {
               <li
                 key={platformx.id}
                 className={`px-4 py-2 text-sm text-gray-700 dark:text-white dark:hover:bg-gray-600 hover:bg-gray-100 cursor-pointer`}
-                onClick={() => selectedPlatform(platformx)}
+                onClick={() => selectedPlatform(platformx.id)}
               >
                 {platformx.name}
               </li>
