@@ -39,7 +39,7 @@ const App = () => {
               <PlatformSelector />
               <SortSelector />
             </div>
-            <GameGrid gameQuery={gameQuery} />
+            <GameGrid />
           </div>
         </div>
       </div>
