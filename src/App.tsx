@@ -29,12 +29,7 @@ const App = () => {
         <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex">
           <div className="w-[15%] p-4">
-            <GenreList
-              selectedGenreId={gameQuery.genreId}
-              getSelectedGenre={(genre) =>
-                setGameQuery({ ...gameQuery, genreId: genre.id })
-              }
-            />
+            <GenreList />
           </div>
           <div className="w-[85%] p-4">
             <div className="space-x-5 pl-3 mb-4">

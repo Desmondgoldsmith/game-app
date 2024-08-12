@@ -1,12 +1,11 @@
-import { GenreProps, UseGenre } from "../hooks/useGenre";
+import { UseGenre } from "../hooks/useGenre";
+import GameQueryStore from "../store";
 
-interface Props {
-  getSelectedGenre: (genre: GenreProps) => void;
-  selectedGenreId?: number;
-}
-
-const GenreList = ({ selectedGenreId, getSelectedGenre }: Props) => {
+const GenreList = () => {
   const { data } = UseGenre();
+  const gameQuery = GameQueryStore((s) => s.gameQuery);
+  const getSelectedGenre = GameQueryStore((s) => s.setGenreId);
+
   return (
     <>
       <h1 className="font-mono mb-4 font-bold text-[25px] p-2">Genres</h1>
@@ -19,12 +18,12 @@ const GenreList = ({ selectedGenreId, getSelectedGenre }: Props) => {
             />
             <p
               className={`${
-                data.id === selectedGenreId
+                data.id === gameQuery.genreId
                   ? `font-extrabold text-green-500`
                   : ""
               }
               hover:cursor-pointer hover:underline`}
-              onClick={() => getSelectedGenre(data)}
+              onClick={() => getSelectedGenre(data.id)}
             >
               {data.name}
             </p>
