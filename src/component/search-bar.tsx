@@ -1,12 +1,10 @@
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
+import GameQueryStore from "../store";
 
-interface Props {
-  onSearch: (searchValue: string) => void;
-}
-
-const SearchBar = ({ onSearch }: Props) => {
+const SearchBar = () => {
   const ref = useRef<HTMLInputElement>(null);
+  const onSearch = GameQueryStore((s) => s.setSearchValue); //using selectors to get the setSearch value, with this ; this component only renders when setSearchValue changes
   return (
     <div className="relative w-full">
       <form

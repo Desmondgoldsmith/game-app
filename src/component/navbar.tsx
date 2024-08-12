@@ -5,10 +5,9 @@ import SearchBar from "./search-bar";
 interface Props {
   darkMode: boolean;
   toggleDarkMode: () => void;
-  onSearch: (searchValue: string) => void;
 }
 
-const Navbar = ({ darkMode, toggleDarkMode, onSearch }: Props) => {
+const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
   return (
     <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
       <div className="flex items-center space-x-4 ">
@@ -16,7 +15,7 @@ const Navbar = ({ darkMode, toggleDarkMode, onSearch }: Props) => {
         <p>Navbar</p>
       </div>
       <div className="flex-grow mx-4">
-        <SearchBar onSearch={onSearch} />
+        <SearchBar />
       </div>
       <button
         onClick={toggleDarkMode}

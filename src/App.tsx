@@ -6,16 +6,8 @@ import PlatformSelector from "./component/PlatformSelector";
 import SortSelector from "./component/Sort-Selector";
 import GameHeading from "./component/GameHeading";
 
-export interface GameQuery {
-  genreId?: number;
-  platformId?: number;
-  sortOrder: string;
-  searchValue: string;
-}
-
 const App = () => {
   const [darkMode, setDarkMode] = useState<boolean>(false);
-  const [gameQuery, setGameQuery] = useState<GameQuery>({} as GameQuery);
 
   useEffect(() => {
     const isDarkMode = localStorage.getItem("darkMode") === "true";
@@ -34,13 +26,7 @@ const App = () => {
   return (
     <>
       <div className="w-full min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
-        <Navbar
-          onSearch={(searchValue) =>
-            setGameQuery({ ...gameQuery, searchValue })
-          }
-          darkMode={darkMode}
-          toggleDarkMode={toggleDarkMode}
-        />
+        <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
         <div className="flex">
           <div className="w-[15%] p-4">
             <GenreList
