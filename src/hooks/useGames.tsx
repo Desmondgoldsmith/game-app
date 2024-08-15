@@ -7,6 +7,7 @@ const apiClient = new APIclient<GamesProps>("/games");
 export interface GamesProps {
   id: number;
   name: string;
+  slug: string;
   background_image: string;
   parent_platforms: { platform: Platform }[];
   metacritic: number;

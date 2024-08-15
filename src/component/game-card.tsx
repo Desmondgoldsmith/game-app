@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { GamesProps } from "../hooks/useGames";
 import GetSizedImages from "../services/image-url";
 import CriticScore from "./critic-score";
@@ -18,9 +19,11 @@ const GameCard = ({ results }: Props) => {
         />
         <div className="p-4 flex justify-between items-center">
           <div>
-            <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
-              {results.name}
-            </h2>
+            <Link to={`details/` + results.slug}>
+              <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
+                {results.name}
+              </h2>
+            </Link>
             <PlatformIconList
               platforms={results.parent_platforms.map(
                 (platform) => platform.platform
