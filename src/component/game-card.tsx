@@ -19,7 +19,7 @@ const GameCard = ({ results }: Props) => {
         />
         <div className="p-4 flex justify-between items-center">
           <div>
-            <Link to={`details/` + results.slug}>
+            <Link to={`games/` + results.slug}>
               <h2 className="text-xl font-semibold text-gray-800 dark:text-white mb-2">
                 {results.name}
               </h2>

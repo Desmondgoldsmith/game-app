@@ -22,7 +22,9 @@ const Layout = () => {
   return (
     <div className="w-full min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
       <Navbar darkMode={darkMode} toggleDarkMode={toggleDarkMode} />
-      <Outlet />
+      <div className="p-5">
+        <Outlet />
+      </div>
     </div>
   );
 };

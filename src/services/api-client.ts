@@ -25,4 +25,10 @@ export default class APIclient<T> {
       (res) => res.data
     );
   };
+
+  getGame = (id: string | number) => {
+    return AxiosInstance.get<T>(this.endpoint + "/" + id).then(
+      (res) => res.data
+    );
+  };
 }
