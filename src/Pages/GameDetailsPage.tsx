@@ -5,7 +5,7 @@ const GameDetailsPage = () => {
   const { slug } = useParams();
   const { data, isLoading, error } = GetGame(slug!);
   console.log("data", data);
-  isLoading ? "Loading ...." : "";
+  isLoading ? "Loading ... Please wait.." : "";
   if (error) throw error;
 
   return (
