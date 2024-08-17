@@ -22,8 +22,12 @@ export default class APIclient<T> {
   };
 
   getGame = (id: string | number) => {
-    return AxiosInstance.get<T>(this.endpoint + "/" + id).then(
-      (res) => res.data
-    );
+    try {
+      return AxiosInstance.get<T>(this.endpoint + "/" + id).then(
+        (res) => res.data
+      );
+    } catch (error) {
+      console.log("Error", error);
+    }
   };
 }

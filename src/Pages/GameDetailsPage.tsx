@@ -1,18 +1,21 @@
 import { useParams } from "react-router-dom";
 import GetGame from "../hooks/useGame";
+import ExpandText from "../component/expandText";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
-  const { data, isLoading, error } = GetGame(slug!);
-  console.log("data", data);
+  const { data, isLoading } = GetGame(slug!);
+  console.log("data", data?.name);
   isLoading ? "Loading ... Please wait.." : "";
-  if (error) throw error;
+  // if (error) throw error;
 
   return (
     <>
       <div>
         <h1 className="font-bold text-[40px]">{data?.name}</h1>
-        <p>{data?.description_raw}</p>
+        {data?.description_raw && (
+          <ExpandText>{data.description_raw}</ExpandText>
+        )}
       </div>
     </>
   );
