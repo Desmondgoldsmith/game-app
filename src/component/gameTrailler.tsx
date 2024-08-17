@@ -1,0 +1,25 @@
+import UseTrailler from "../hooks/useTrailler";
+
+interface Props {
+  gameId: number;
+}
+const GameTrailler = ({ gameId }: Props) => {
+  const { data: trailler, error, isLoading } = UseTrailler(gameId);
+
+  if (isLoading) return null;
+  if (error) console.error(error);
+
+  const path = trailler?.results[0];
+  console.log("path", path);
+  console.log("data", trailler);
+
+  if (!path) return <div>No trailer available</div>;
+
+  return (
+    <div className="mt-5">
+      <video src={path.data["480"]} poster={path.preview} controls />
+    </div>
+  );
+};
+
+export default GameTrailler;

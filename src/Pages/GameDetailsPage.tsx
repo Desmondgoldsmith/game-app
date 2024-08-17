@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import GetGame from "../hooks/useGame";
 import ExpandText from "../component/expandText";
 import GameAttributes from "../component/gameAttributes";
+import GameTrailler from "../component/gameTrailler";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -9,7 +10,7 @@ const GameDetailsPage = () => {
   console.log("data", data?.name);
   isLoading ? "Loading ... Please wait.." : "";
   // if (error) throw error;
-
+  if (!data) return null;
   return (
     <>
       <div>
@@ -18,6 +19,7 @@ const GameDetailsPage = () => {
           <ExpandText>{data.description_raw}</ExpandText>
         )}
         <GameAttributes data={data} />
+        <GameTrailler gameId={data.id} />
       </div>
     </>
   );
