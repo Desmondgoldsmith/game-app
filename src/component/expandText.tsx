@@ -8,6 +8,8 @@ const ExpandText = ({ children }: Props) => {
   const [expanded, setExpanded] = useState(false);
   const maxLength = 300;
 
+  if (!children) return null;
+
   if (children.length <= maxLength) return <p>{children}</p>;
   const summary = expanded
     ? children
@@ -15,7 +17,7 @@ const ExpandText = ({ children }: Props) => {
 
   return (
     <p>
-      {summary}
+      <span className="text-[20px]">{summary}</span>
       <button
         className="p-2 bg-slate-800 rounded-md font-bold ml-3"
         onClick={() => setExpanded(!expanded)}

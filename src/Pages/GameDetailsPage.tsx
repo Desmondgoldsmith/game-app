@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import GetGame from "../hooks/useGame";
 import ExpandText from "../component/expandText";
+import GameAttributes from "../component/gameAttributes";
 
 const GameDetailsPage = () => {
   const { slug } = useParams();
@@ -16,6 +17,7 @@ const GameDetailsPage = () => {
         {data?.description_raw && (
           <ExpandText>{data.description_raw}</ExpandText>
         )}
+        <GameAttributes data={data} />
       </div>
     </>
   );
