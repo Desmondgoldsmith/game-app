@@ -1,11 +1,7 @@
 import logo from "../assets/react.svg";
 import { FaMoon, FaSun } from "react-icons/fa";
 import SearchBar from "./search-bar";
-
-interface Props {
-  darkMode: boolean;
-  toggleDarkMode: () => void;
-}
+import { Props } from "../Entities/NavbarProps";
 
 const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
   return (

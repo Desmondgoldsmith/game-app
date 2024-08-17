@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
-import { GamesProps } from "../hooks/useGames";
 import GetSizedImages from "../services/image-url";
 import CriticScore from "./critic-score";
 import PlatformIconList from "./platform-icon-list";
+import { GamesProps } from "../Entities/GamesProps";
 
 interface Props {
   results: GamesProps;

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import APIclient from "../services/api-client";
-import { GamesProps } from "./useGames";
+import { GamesProps } from "../Entities/GamesProps";
 
 const { getGame } = new APIclient<GamesProps>("/games");
 

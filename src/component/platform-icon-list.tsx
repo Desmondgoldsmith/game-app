@@ -1,4 +1,4 @@
-import { Platform } from "../hooks/usePlatforms.tsx";
+import { Platform } from "../Entities/Platform.tsx";
 import {
   FaLinux,
   FaXbox,
