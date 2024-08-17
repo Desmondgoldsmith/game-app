@@ -1,7 +1,7 @@
 import React from "react";
 import { UseGames } from "../hooks/useGames";
-import GameCard from "./game-card";
-import GameCardSkeleton from "./game-card-skeleton";
+import GameCard from "./gameCard";
+import GameCardSkeleton from "./gameCardSkeleton";
 import InfiniteScroll from "react-infinite-scroll-component";
 import GameQueryStore from "../store";
 

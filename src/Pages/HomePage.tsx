@@ -1,8 +1,8 @@
-import GameGrid from "../component/game-grid";
-import SortSelector from "../component/Sort-Selector";
-import PlatformSelector from "../component/PlatformSelector";
+import GameGrid from "../component/gameGrid";
 import GameHeading from "../component/GameHeading";
 import GenreList from "../component/GenreList";
+import PlatformSelector from "../component/PlatformSelector";
+import SortSelector from "../component/SortSelector";
 
 const HomePage = () => {
   return (

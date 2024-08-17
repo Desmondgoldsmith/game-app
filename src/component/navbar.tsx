@@ -1,6 +1,6 @@
 import logo from "../assets/react.svg";
 import { FaMoon, FaSun } from "react-icons/fa";
-import SearchBar from "./search-bar";
+import SearchBar from "./searchBar";
 import { Props } from "../Entities/NavbarProps";
 
 const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
