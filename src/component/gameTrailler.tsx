@@ -10,8 +10,6 @@ const GameTrailler = ({ gameId }: Props) => {
   if (error) console.error(error);
 
   const path = trailler?.results[0];
-  console.log("path", path);
-  console.log("data", trailler);
 
   if (!path) return <div>No trailer available</div>;
 
