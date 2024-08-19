@@ -15,12 +15,20 @@ const GameDetailsPage = () => {
   return (
     <>
       <div>
-        <h1 className="font-bold text-[40px]">{data?.name}</h1>
-        {data?.description_raw && (
-          <ExpandText>{data.description_raw}</ExpandText>
-        )}
-        <GameAttributes data={data} />
-        <GameTrailler gameId={data.id} />
+        <div className="flex justify-between">
+          <div className="p-3 space-y-3">
+            <h1 className="font-bold text-[40px]">{data?.name}</h1>
+            {data?.description_raw && (
+              <ExpandText>{data.description_raw}</ExpandText>
+            )}
+            <GameAttributes data={data} />
+          </div>
+          <div>
+            <GameTrailler gameId={data.id} />
+          </div>
+        </div>
+
+        {/* // for some reason, the screenshot isnt working */}
         {/* <Screenshots gameId={data.id} /> */}
       </div>
     </>
