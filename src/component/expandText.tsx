@@ -20,7 +20,7 @@ const ExpandText = ({ children }: Props) => {
     <div>
       <p className="text-lg">{summary}</p>
       <button
-        className="mt-2 px-4 py-2 bg-slate-800 rounded-md font-bold text-sm"
+        className="mt-2 px-4 py-2 bg-slate-800 dark:text-white rounded-md font-bold text-sm"
         onClick={() => setExpanded(!expanded)}
       >
         {expanded ? "Show Less" : "Read More"}
