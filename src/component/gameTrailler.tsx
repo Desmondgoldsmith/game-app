@@ -11,7 +11,7 @@ const GameTrailler = ({ gameId }: Props) => {
 
   const path = trailler?.results[0];
 
-  if (!path) return <div>No trailer available</div>;
+  if (!path) return null;
 
   return (
     <div className="mt-5">

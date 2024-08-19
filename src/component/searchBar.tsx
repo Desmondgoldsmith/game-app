@@ -1,16 +1,21 @@
 import { useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import GameQueryStore from "../store";
+import { useNavigate } from "react-router-dom";
 
 const SearchBar = () => {
   const ref = useRef<HTMLInputElement>(null);
   const onSearch = GameQueryStore((s) => s.setSearchValue); //using selectors to get the setSearch value, with this ; this component only renders when setSearchValue changes
+  const navigate = useNavigate();
   return (
     <div className="relative w-full">
       <form
         onSubmit={(e) => {
           e.preventDefault();
-          if (ref.current) return onSearch(ref.current.value);
+          if (ref.current) {
+            onSearch(ref.current.value);
+            navigate("/");
+          }
         }}
       >
         <input

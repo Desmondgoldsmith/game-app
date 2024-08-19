@@ -2,13 +2,15 @@ import logo from "../assets/react.svg";
 import { FaMoon, FaSun } from "react-icons/fa";
 import SearchBar from "./searchBar";
 import { Props } from "../Entities/NavbarProps";
+import { Link } from "react-router-dom";
 
 const Navbar = ({ darkMode, toggleDarkMode }: Props) => {
   return (
     <div className="flex justify-between items-center p-4 bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
       <div className="flex items-center space-x-4 ">
-        <img src={logo} width={60} alt="Logo" />
-        <p>Navbar</p>
+        <Link to="/">
+          <img src={logo} width={60} alt="Logo" />
+        </Link>
       </div>
       <div className="flex-grow mx-4">
         <SearchBar />

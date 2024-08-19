@@ -15,8 +15,8 @@ const GameDetailsPage = () => {
   return (
     <>
       <div>
-        <div className="flex justify-between">
-          <div className="p-3 space-y-3">
+        <div className="flex justify-between ">
+          <div className="p-3 space-y-3 break-words text-wrap ">
             <h1 className="font-bold text-[40px]">{data?.name}</h1>
             {data?.description_raw && (
               <ExpandText>{data.description_raw}</ExpandText>
