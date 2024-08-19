@@ -14,7 +14,7 @@ const HomePage = () => {
         <div className="mb-4">
           <GameHeading />
         </div>
-        <div className="flex flex-col sm:flex-col space-y-2 sm:space-y-0 sm:space-x-5 mb-4">
+        <div className="flex flex-row items-center space-x-2 sm:space-x-5 mb-4">
           <PlatformSelector />
           <SelectSort />
         </div>

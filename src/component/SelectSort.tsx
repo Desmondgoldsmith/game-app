@@ -21,7 +21,7 @@ const SelectSort = () => {
     <div className="relative">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center justify-between  w-48 px-4 py-2 text-sm font-medium dark:bg-gray-700 dark:focus:ring-blue-400 dark:text-white dark:border dark:border-gray-700 dark:hover:bg-gray-600 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+        className="flex items-center justify-between w-full px-2 sm:px-4 py-1 sm:py-2 text-xs sm:text-sm font-medium dark:bg-gray-700 dark:focus:ring-blue-400 dark:text-white dark:border dark:border-gray-700 dark:hover:bg-gray-600 text-gray-700 bg-white border border-gray-300 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
       >
         <span>Order By: {current?.label || "Relevance"}</span>
         <BsChevronDown
