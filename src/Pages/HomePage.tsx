@@ -2,7 +2,7 @@ import GameGrid from "../component/gameGrid";
 import GameHeading from "../component/GameHeading";
 import GenreList from "../component/GenreList";
 import PlatformSelector from "../component/PlatformSelector";
-import SortSelector from "../component/SortSelector";
+import SelectSort from "../component/SelectSort";
 
 const HomePage = () => {
   return (
@@ -16,7 +16,7 @@ const HomePage = () => {
         </div>
         <div className="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-5 mb-4">
           <PlatformSelector />
-          <SortSelector />
+          <SelectSort />
         </div>
         <GameGrid />
       </div>

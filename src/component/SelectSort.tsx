@@ -2,7 +2,7 @@ import { useState } from "react";
 import { BsChevronDown } from "react-icons/bs";
 import GameQueryStore from "../store";
 
-const SortSelector = () => {
+const SelectSort = () => {
   const [isOpen, setIsOpen] = useState(false);
   const sort = GameQueryStore((s) => s.gameQuery.sortOrder);
   const onSelectSortOrder = GameQueryStore((s) => s.setSortOrder);
@@ -49,4 +49,4 @@ const SortSelector = () => {
   );
 };
 
-export default SortSelector;
+export default SelectSort;
