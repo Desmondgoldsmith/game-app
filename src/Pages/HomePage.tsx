@@ -7,7 +7,7 @@ import SelectSort from "../component/SelectSort";
 const HomePage = () => {
   return (
     <div className="flex flex-col md:flex-row">
-      <div className="w-full md:w-1/4 lg:w-1/5 p-2 md:p-4">
+      <div className="w-full sm:hidden md:w-1/4 lg:w-1/5 p-2 md:p-4">
         <GenreList />
       </div>
       <div className="w-full md:w-3/4 lg:w-4/5 p-2 md:p-4">
