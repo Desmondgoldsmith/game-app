@@ -10,9 +10,9 @@ const GameHeading = () => {
   const genre = genres?.results.find((genre) => genre.id === gameQuery.genreId);
   const dynamicHeader = `${platform?.name || ""} ${genre?.name || ""} Games`;
   return (
-    <>
-      <h1 className="text-[36px] font-mono font-bold">{dynamicHeader}</h1>
-    </>
+    <h1 className="text-2xl md:text-3xl lg:text-4xl font-mono font-bold">
+      {dynamicHeader}
+    </h1>
   );
 };
 
